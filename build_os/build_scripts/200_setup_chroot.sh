@@ -16,8 +16,8 @@ PASTE
 
 mkinitcpio -p linux
 #passwd
-pacman -S grub os-prober
-pacman -S git docker
+pacman -S --noconfirm grub os-prober
+pacman -S --noconfirm git docker
 grub-install --recheck /dev/sdc
 grub-mkconfig -o /boot/grub/grub.cfg
 
