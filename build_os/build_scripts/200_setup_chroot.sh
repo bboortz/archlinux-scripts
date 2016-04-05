@@ -1,6 +1,6 @@
 
 echo "*** step into a chroot and configure"
-cat <<-END | arch-chroot /mnt
+cat <<-END | arch-chroot $MOUNT_POINT
 
 echo "*** base configuration ***"
 echo ${HOST} > /etc/hostname
@@ -18,7 +18,7 @@ mkinitcpio -p linux
 #passwd
 pacman -S --noconfirm grub os-prober
 pacman -S --noconfirm git docker
-grub-install --recheck /dev/sdc
+grub-install --recheck $DISK_DEV
 grub-mkconfig -o /boot/grub/grub.cfg
 
 END
