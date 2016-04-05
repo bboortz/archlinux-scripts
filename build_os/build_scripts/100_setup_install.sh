@@ -1,7 +1,4 @@
 # prepare install media
-echo "*** pretest *** "
-ping -c 3 -W 1 $INTERNET_TEST_HOST || exit 1
-
 echo "*** setup basic settings ***"
 loadkeys de
 ntpdate -u -v $NTP_SERVER
