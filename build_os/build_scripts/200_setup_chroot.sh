@@ -18,6 +18,8 @@ mkinitcpio -p linux
 #passwd
 pacman -S --noconfirm grub os-prober
 pacman -S --noconfirm git docker
+cd /root
+git clone https://github.com/bboortz/archlinux-scripts
 grub-install --recheck $DISK_DEV
 grub-mkconfig -o /boot/grub/grub.cfg
 
