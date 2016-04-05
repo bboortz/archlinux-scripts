@@ -8,8 +8,9 @@ set -i
 set -x
 
 
-pacman -Sy git
-git clone https://github.com/bboortz/archlinux-scripts.git
+pacman -Sy --noconfirm unzip
+wget https://github.com/bboortz/archlinux-scripts/archive/master.zip
+unzip master.zip
 cd archlinux-scripts/build_os
 ./build.sh
 
