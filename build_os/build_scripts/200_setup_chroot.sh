@@ -1,12 +1,3 @@
-#!/bin/bash
-set -e
-set -i
-set -x
-
-# *** settings ***
-DISK_DEV=/dev/sda
-HOST=vm1
-
 echo "*** base configuration ***"
 echo ${HOST} > /etc/hostname
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime

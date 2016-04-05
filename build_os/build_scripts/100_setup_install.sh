@@ -1,13 +1,3 @@
-#!/bin/bash
-set -e
-set -i
-set -x
-
-# *** settings ***
-DISK_DEV=/dev/sda
-HOST=vm1
-
-
 # prepare install media
 echo "*** pretest *** "
 ping -c 3 -W 1 $INTERNET_TEST_HOST || exit 1
@@ -35,7 +25,7 @@ echo "*** enable swapping ***"
 swapon -L swap
 
 echo "*** setup pacman mirrors ***"
-vi /etc/pacman.d/mirrorlist
+#vi /etc/pacman.d/mirrorlist
 
 echo "*** install the base ***"
 pacstrap /mnt base base-devel
