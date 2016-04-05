@@ -5,13 +5,14 @@ cat <<-END | arch-chroot /mnt
 echo "*** base configuration ***"
 echo ${HOST} > /etc/hostname
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
-vi /etc/locale.gen
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale
-vi /etc/vconsole.conf
 
-#KEYMAP=de-latin1
-#FONT=lat9w-16
+cat <<-PASTE > /etc/vconsole.conf
+KEYMAP=de-latin1
+FONT=lat9w-16
+PASTE
 
 mkinitcpio -p linux
 passwd
