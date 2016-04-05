@@ -10,11 +10,11 @@ HOST=vm1
 
 # prepare install media
 echo "*** pretest *** "
-ping -c 3 -W 1 google.com || exit 1
+ping -c 3 -W 1 $INTERNET_TEST_HOST || exit 1
 
 echo "*** setup basic settings ***"
 loadkeys de
-ntpdate -u -v ntp1.ptb.de
+ntpdate -u -v $NTP_SERVER
 
 
 echo "*** prepare target disk ***"
@@ -24,7 +24,7 @@ mkswap -L swap ${DISK_DEV}2
 #mkfs.ext4 -L boot ${DISK_DEV}3
 #mkfs.ext4 -L home ${DISK_DEV}4
 
-echo "*** mound partitions ***"
+echo "*** mount partitions ***"
 mount ${DISK_DEV}1 /mnt
 mkdir /mnt/boot
 mkdir /mnt/home
