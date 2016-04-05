@@ -15,7 +15,7 @@ FONT=lat9w-16
 PASTE
 
 mkinitcpio -p linux
-passwd
+#passwd
 pacman -S grub os-prober
 pacman -S git docker
 grub-install --recheck /dev/sdc

@@ -25,8 +25,7 @@ echo "*** setup pacman mirrors ***"
 #vi /etc/pacman.d/mirrorlist
 
 echo "*** install the base ***"
-pacstrap /mnt base
-#pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel
 genfstab -p /mnt >> /mnt/etc/fstab
 
 
