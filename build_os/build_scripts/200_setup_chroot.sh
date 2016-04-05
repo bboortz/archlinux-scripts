@@ -1,3 +1,7 @@
+
+echo "*** step into a chroot and configure"
+cat <<-END | arch-chroot /mnt
+
 echo "*** base configuration ***"
 echo ${HOST} > /etc/hostname
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
@@ -15,5 +19,5 @@ pacman -S grub os-prober
 pacman -S git docker
 grub-install --recheck /dev/sdc
 grub-mkconfig -o /boot/grub/grub.cfg
-umount -R /mnt
-reboot
+
+END

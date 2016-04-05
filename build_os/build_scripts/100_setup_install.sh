@@ -32,6 +32,4 @@ pacstrap /mnt base
 #pacstrap /mnt base base-devel
 genfstab -p /mnt >> /mnt/etc/fstab
 
-echo "*** step into the chroot ***"
-arch-chroot /mnt /setup_desktop_chroot.sh
 
