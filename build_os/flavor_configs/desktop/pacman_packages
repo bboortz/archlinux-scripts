@@ -1,0 +1,6 @@
+xfce4 xfce4-goodies human-icon-theme 
+xorg-xdm xdm-archlinux xorg-server xorg-xinit xorg-utils xorg-server-utils 
+networkmanager gnome-keyring network-manager-applet nm-connection-editor
+networkmanager gnome-keyring network-manager-applet nm-connection-editor
+xf86-video-vesa
+

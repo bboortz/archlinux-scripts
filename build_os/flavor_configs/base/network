@@ -1,0 +1,5 @@
+Description='A basic dhcp ethernet connection'
+Interface=enp0s3
+Connection=ethernet
+IP=dhcp
+IP6=dhcp
