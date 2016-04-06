@@ -6,8 +6,10 @@ set -x
 
 . .config
 
+CURDIR="$PWD"
 for f in post_scripts/*.sh; do
-	. $f
+	cd "$CURDIR"
+	. "$f"
 done
 
 echo "POST SETUP SUCCESSFUL !!!"

@@ -6,8 +6,10 @@ set -x
 
 . .config
 
+CURDIR="$PWD"
 for f in build_scripts/*.sh; do
-	. $f
+	cd "$CURDIR"
+	. "$f"
 done
 
 echo "BUILD SUCCESSFUL !!!"
