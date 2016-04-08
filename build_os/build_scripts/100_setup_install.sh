@@ -13,6 +13,8 @@ parted -s ${DISK_DEV} mkpart primary linux-swap 1500MiB 2000MiB
 
 mkfs.ext4 ${DISK_DEV}1
 mkfs.ext4 ${DISK_DEV}2
+mkswap ${DISK_DEV}2
+
 
 echo "*** mount partitions ***"
 mount ${DISK_DEV}2 /mnt
@@ -21,11 +23,14 @@ mkdir /mnt/home
 mount ${DISK_DEV}1 /mnt/boot
 #mount ${DISK_DEV}4 /mnt/home
 
+
 echo "*** enable swapping ***"
 swapon -L swap
 
+
 echo "*** setup pacman mirrors ***"
 #vi /etc/pacman.d/mirrorlist
+
 
 echo "*** install the base ***"
 pacstrap /mnt base base-devel
