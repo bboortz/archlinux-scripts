@@ -13,7 +13,7 @@ parted -s ${DISK_DEV} mkpart primary linux-swap 1500MiB 2000MiB
 
 mkfs.ext4 ${DISK_DEV}1
 mkfs.ext4 ${DISK_DEV}2
-mkswap ${DISK_DEV}2
+mkswap ${DISK_DEV}3
 
 
 echo "*** mount partitions ***"
