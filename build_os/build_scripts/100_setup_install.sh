@@ -11,9 +11,9 @@ parted -s ${DISK_DEV} set 1 boot on
 parted -s ${DISK_DEV} mkpart primary ext4 100MiB 1500MiB 
 parted -s ${DISK_DEV} mkpart primary linux-swap 1500MiB 2000MiB
 
-mkfs.ext4 ${DISK_DEV}1
-mkfs.ext4 ${DISK_DEV}2
-mkswap ${DISK_DEV}3
+mkfs.ext4 -L boot ${DISK_DEV}1
+mkfs.ext4 -L arch ${DISK_DEV}2
+mkswap -L swap ${DISK_DEV}3
 
 
 echo "*** mount partitions ***"
