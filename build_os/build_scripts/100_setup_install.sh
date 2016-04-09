@@ -10,7 +10,7 @@ parted -s ${DISK_DEV} mkpart primary ext4 1MiB 100MiB
 parted -s ${DISK_DEV} set 1 boot on
 parted -s ${DISK_DEV} mkpart primary ext4 100MiB 4000MiB 
 parted -s ${DISK_DEV} mkpart primary linux-swap 4000MiB 4500MiB
-parted -s ${DISK_DEV} mkpart primary ext4 1500MiB 100%
+parted -s ${DISK_DEV} mkpart primary ext4 4500MiB 100%
 
 mkfs.ext4 -L boot ${DISK_DEV}1
 mkfs.ext4 -L arch ${DISK_DEV}2
