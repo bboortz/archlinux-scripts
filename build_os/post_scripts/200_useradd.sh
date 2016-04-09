@@ -1,3 +1,4 @@
 echo "*** add user ***"
-useradd -m $USER_ADMIN
-useradd -m $USER_DESKTOP
+# create with: openssl passwd -crypt PASS
+useradd -p nZWhhqZO4U5YE -m $USER_ADMIN
+useradd -p nZWhhqZO4U5YE -m $USER_DESKTOP
