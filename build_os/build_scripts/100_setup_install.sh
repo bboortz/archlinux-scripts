@@ -33,7 +33,7 @@ echo "*** setup pacman mirrors ***"
 
 
 echo "*** install the base ***"
-pacstrap /mnt base base-devel
+pacstrap /mnt base 
 genfstab -p /mnt >> /mnt/etc/fstab
 
 

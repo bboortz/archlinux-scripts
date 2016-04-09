@@ -16,8 +16,8 @@ PASTE
 
 mkinitcpio -p linux
 #passwd
-pacman -S --noconfirm grub os-prober
-pacman -S --noconfirm git docker
+pacman -S --noconfirm --needed grub os-prober
+pacman -S --noconfirm --needed git docker
 cd /root
 git clone https://github.com/bboortz/archlinux-scripts
 grub-install --recheck $DISK_DEV
