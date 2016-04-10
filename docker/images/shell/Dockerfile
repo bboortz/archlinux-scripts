@@ -1,6 +1,6 @@
 FROM alpine_base
 
-ENV USER docker_base
+ENV USER docker_shell
 ENV UID 501
 ENV HOME /home/$USER
 
