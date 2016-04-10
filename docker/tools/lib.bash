@@ -1,4 +1,5 @@
 set -u
+set -e
 
 export ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename "${BASH_SOURCE[0]}"`
 export DOCKER_TOOLS_PATH="$( readlink -f ${ABSOLUTE_PATH%/*} )"

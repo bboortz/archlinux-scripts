@@ -1,5 +1,5 @@
 FROM alpine_base
-
+ 
 ENV USER docker_firefox
 ENV UID 502
 ENV HOME /home/$USER
@@ -10,7 +10,7 @@ RUN adduser $USER -u $UID -g "" -D -s /bin/false -S && \
 
 USER $USER
 ENTRYPOINT [ "/usr/bin/firefox" ]
-CMD [ "-no-remote" ]
+#CMD [ "-no-remote" ]
 
 
 

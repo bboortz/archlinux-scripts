@@ -15,8 +15,6 @@ docker run \
        -v $HOME/.Xauthority:/home/${USER}/.Xauthority:ro \
        --device /dev/snd \
        --name firefox \
-       firefox
+       firefox --display=$DISPLAY --no-remote --browser
 
-
-
-
+echo $?

@@ -25,14 +25,18 @@ f_build() {
 	local lv_from=$( awk '/^FROM/ { gsub(/:.*/, "", $2); print $2 }' Dockerfile )
 	local lv_from_dir="${DOCKER_IMAGES_PATH}/${lv_from}"
 	if [ -d "${lv_from_dir}" ]; then
+		OLDDIR="$(pwd)"
 		f_build "$lv_from" "${lv_from_dir}"
+		cd "$OLDDIR"
 	else
 		f_pull "$lv_from"
 	fi
 
 	echo
 	echo "docker build: $lv_image"
+	echo docker build -t $lv_image .
 	docker build -t $lv_image .
 }
 
 f_build "$IMAGE_NAME" "$DIR"
+date "+%s" > ${DOCKER_IMAGES_PATH}/LAST_BUILD
