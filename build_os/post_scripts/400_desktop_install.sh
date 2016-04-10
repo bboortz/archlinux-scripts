@@ -7,3 +7,5 @@ pacman -Sy --noconfirm --needed lxde openbox
 #systemctl enable lxdm.service
 #systemctl enable xdm-archlinux
 
+systemctl enable lxdm
+

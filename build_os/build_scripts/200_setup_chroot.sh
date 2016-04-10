@@ -5,7 +5,10 @@ cat <<-END | arch-chroot $MOUNT_POINT
 echo "*** base configuration ***"
 echo ${HOST} > /etc/hostname
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+cat <<-PASTE >> /etc/locale.gen
+en_US.UTF-8 UTF-8
+de_DE.UTF-8 UTF-8
+PASTE
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale
 
