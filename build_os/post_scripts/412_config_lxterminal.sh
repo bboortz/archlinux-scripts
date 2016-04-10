@@ -1,0 +1,1 @@
+../../lxde_tools/config_lxterminal.sh
