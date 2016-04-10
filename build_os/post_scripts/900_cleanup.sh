@@ -1,1 +1,1 @@
-pacman -Scc
+pacman --noconfirm -Scc
