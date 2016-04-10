@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. ${0%/*}/../tools/lib.bash
+
+USER=user_firefox
+MEM=512mb
+
+xhost + > /dev/null
+
+docker run \
+       -ti --rm \
+       --memory $MEM \
+       -e DISPLAY=$DISPLAY \
+       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+       -v $HOME/.Xauthority:/home/${USER}/.Xauthority:ro \
+       --device /dev/snd \
+       --name firefox \
+       firefox
+
+
+
+

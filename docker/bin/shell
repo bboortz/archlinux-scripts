@@ -1,0 +1,19 @@
+#!/bin/bash
+
+. ${0%/*}/../tools/lib.bash
+
+USER=user_shell
+MEM=512mb
+
+xhost + > /dev/null
+
+docker run \
+       -ti --rm \
+       --memory $MEM \
+       --name shell \
+       shell
+
+
+
+
+
