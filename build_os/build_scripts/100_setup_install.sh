@@ -12,9 +12,9 @@ parted -s ${DISK_DEV} mkpart primary ext4 100MiB 4000MiB
 parted -s ${DISK_DEV} mkpart primary linux-swap 4000MiB 4500MiB
 parted -s ${DISK_DEV} mkpart primary ext4 4500MiB 100%
 
-mkfs.ext4 -L boot ${DISK_DEV}1
-mkfs.ext4 -L arch ${DISK_DEV}2
-mkfs.ext4 -L arch ${DISK_DEV}4
+mkfs.ext4 -q -L boot ${DISK_DEV}1
+mkfs.ext4 -q -L arch ${DISK_DEV}2
+mkfs.ext4 -q -L home ${DISK_DEV}4
 mkswap -L swap ${DISK_DEV}3
 
 
