@@ -14,7 +14,7 @@ Icon=folder
 END
 
 
-cat <<-END >> /home/userd/.config/menus/lxde-applications.menu
+cat <<-END >> ~/.config/menus/lxde-applications.menu
 	<Menu>
               	<Name>${DIR}</Name>
 		<Directory>${DIR}.directory</Directory>
@@ -31,8 +31,8 @@ cat <<-END >> /home/userd/.config/menus/lxde-applications.menu
         	</Layout>
         </Menu>
 END
-sed '$ d' /home/userd/.config/menus/lxde-applications.menu
-echo "</Menu>" >> /home/userd/.config/menus/lxde-applications.menu
+sed '$ d' ~/.config/menus/lxde-applications.menu
+echo "</Menu>" >> ~/.config/menus/lxde-applications.menu
 
 
 

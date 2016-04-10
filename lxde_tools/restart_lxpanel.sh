@@ -5,4 +5,4 @@ set -e
 
 killall lxpanel
 find ~/.cache/menus -name '*' -type f -delete
-nohup lxpanel -p LXDE & /dev/null
+nohup lxpanel -p LXDE > /dev/null &
